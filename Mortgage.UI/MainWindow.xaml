@@ -1,0 +1,44 @@
+﻿<Window x:Class="Mortgage.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mortgage.UI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mvvmc="clr-namespace:MVVMC;assembly=MVVMC"
+        xmlns:reactiveUi="clr-namespace:ReactiveUI;assembly=ReactiveUI"
+        mc:Ignorable="d"
+        Title="Mortgage Tool" Height="450" Width="800" WindowState="Maximized"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
+    <DockPanel>
+        <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                  Mode="PrimaryMid" DockPanel.Dock="Top">
+            <DockPanel>
+                <Button
+                    Command="{mvvmc:GoBackCommand ControllerID='MainOperation', HistoricalNavigationMode=UseCommandParameter}"
+                    Content="{materialDesign:PackIcon ArrowLeft}"
+                    ToolTip="Icon" />
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Mortgage Tool</TextBlock>
+            </DockPanel>
+        </materialDesign:ColorZone>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Margin="0 0 0 16" >
+                
+            </StackPanel>
+            <StackPanel Margin="16 16 16 16" Grid.Row="1">
+                <mvvmc:Region ControllerID="MainOperation"  />
+            </StackPanel>
+            
+        </Grid>
+    </DockPanel>
+</Window>

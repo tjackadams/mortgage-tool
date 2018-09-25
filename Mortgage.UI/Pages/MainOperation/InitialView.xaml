@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Mortgage.UI.Pages.MainOperation.InitialView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mvvmc="clr-namespace:MVVMC;assembly=MVVMC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" Margin="20">
+            <TextBlock HorizontalAlignment="Center" >What shall we do today?</TextBlock>
+            <Button 
+                Style="{StaticResource MaterialDesignFlatButton}" 
+                Margin="10" 
+                Width="150" 
+                Command="{mvvmc:NavigateCommand ControllerID='MainOperation', Action='Search'}"
+                ToolTip="Search a wide range of Lenders to find the best deal for you.">SEARCH</Button>
+            <Button 
+                Style="{StaticResource MaterialDesignFlatButton}" 
+                Margin="10" 
+                Width="150" 
+                Command="{mvvmc:NavigateCommand ControllerID='MainOperation', Action='AddLender'}"
+                ToolTip="Not satisfied with your current list of Lenders? Why not create another one! The more the merrier.">CREATE</Button>
+            <Button 
+                Style="{StaticResource MaterialDesignFlatButton}" 
+                Margin="10" 
+                Width="150" 
+                Command="{mvvmc:NavigateCommand ControllerID='MainOperation', Action='ViewLenders'}"
+                ToolTip="I don't like that one. Let's make some changes!">EDIT</Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
